@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if app.request.attributes.get('_route') == 'update_author' %}
+        <h1>Изменить автора</h1>
+    {% endif %}
+    {% if app.request.attributes.get('_route') == 'insert_author' %}
+        <h1>Добавить автора</h1>
+    {% endif %}
+    {{ form_start(author) }}
+    {{ form_widget(author) }}
+    {{ form_end(author) }}
+{% endblock %}

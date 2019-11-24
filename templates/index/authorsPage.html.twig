@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Список авторов</h1>
+
+    {% for key, author in authors %}
+        <div>
+            {{ author.name }} {{ author.surname }}
+            <a href={{ path('update_author',{id: author.id}) }}>
+                <button>редактировать автора</button>
+            </a>
+            <a href={{ path('personal_author',{id: author.id}) }}>
+            <button>список книг</button>
+            </a>
+        </div>
+    {% endfor %}
+    <a href={{ path('insert_author') }}>
+        <button>добавить автора</button>
+    </a>
+
+
+{% endblock %}

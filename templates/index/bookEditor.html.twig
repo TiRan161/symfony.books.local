@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if app.request.attributes.get('_route') == 'update_book' %}
+        <h1>Изменить книгу</h1>
+    {% endif %}
+    {% if app.request.attributes.get('_route') == 'insert_book' %}
+        <h1>Добавить книгу</h1>
+    {% endif %}
+    {{ form_start(book) }}
+    {{ form_widget(book) }}
+    {{ form_end(book) }}
+{% endblock %}

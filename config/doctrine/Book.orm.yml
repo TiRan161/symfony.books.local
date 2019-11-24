@@ -1,0 +1,32 @@
+App\Entity\Book:
+    type: entity
+    table: books
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        createdAt:
+            type: DATE
+            nullable: false
+            column: created_at
+        title:
+            type: string
+            nullable: false
+    manyToOne:
+        author:
+            targetEntity: App\Entity\Author
+            cascade: {  }
+            fetch: EAGER
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                author_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

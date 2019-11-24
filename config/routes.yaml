@@ -1,0 +1,37 @@
+Authors:
+    path: /
+    controller: App\Controller\AuthorController::getAuthors
+
+insert_author:
+    path: /new
+    controller: App\Controller\AuthorController::insertAuthor
+
+personal_author:
+    path: /{id}
+    controller: App\Controller\BookController::getBookByAuthor
+
+update_author:
+    path: /{id}/update
+    controller: App\Controller\AuthorController::updateAuthor
+
+
+insert_book:
+    path: /{id}/new-book
+    controller: App\Controller\BookController::insertBook
+
+update_book:
+    path: /{id_author}/book/{id}
+    controller: App\Controller\BookController::updateBook
+
+remove_book:
+    path: /remove-book/{id}
+    controller: App\Controller\BookController::removeBook
+
+
+
+
+
+
+index_test:
+    path: /test/test
+    controller: App\Controller\HomeController::index

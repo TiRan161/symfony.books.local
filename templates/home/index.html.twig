@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home page{% endblock %}
+
+{% block body %}
+
+    <div ref="words" data-words="{{ words|join(',') }}">
+
+    </div>
+    {% for user in users %}
+    <div ref="user" data-user="{{ user|join(',') }}">
+
+    </div>
+    {% endfor %}
+
+    <div id="app">
+        <app></app>
+    </div>
+{% endblock %}
+
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>sa</title>#}
+{#</head>#}
+{#<body>#}
+{#hello!#}
+{#<div id="app">#}
+{#    {{ message !- }}#}
+{#</div>#}
+{#<script>#}
+{#    var app = new Vue({#}
+{#        el: '#app',#}
+{#        data: {#}
+{#            message: 'Hello, Vue!'#}
+{#        }#}
+
+{#    })#}
+{#</script>#}
+{#</body>#}
+{#</html>#}

@@ -1,0 +1,24 @@
+App\Entity\Author:
+    type: entity
+    table: authors
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            nullable: false
+        surname:
+            type: string
+            nullable: false
+    oneToMany:
+        books:
+            targetEntity: App\Entity\Book
+            mappedBy: author
+    lifecycleCallbacks: {  }

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1> {{ author.name }} {{ author.surname }}</h1>
+    {% for book in books %}
+        <div> {{ book.createdAt|date('d.m.Y') }} {{ book.title }}
+            <a href={{ path('remove_book',{id: book.id}) }}>
+                <button>удалить</button>
+            </a>
+            <a href={{ path('update_book',{id_author: author.id, id: book.id}) }}>
+                <button>редактировать</button>
+            </a>
+        </div>
+    {% endfor %}
+    <a href="{{ path('insert_book', {id: author.id}) }}">
+    <button>добавить книгу</button>
+    </a>
+
+    {#    {% for key, author in authors %}#}
+    {#        <div>#}
+    {#            {{ author.name }} {{ author.surname }}#}
+    {#            <a href={{ path('update_author',{id: author.id}) }}>#}
+    {#                <button>редактировать автора</button>#}
+    {#            </a>#}
+    {#            <button>список книг</button>#}
+    {#        </div>#}
+    {#    {% endfor %}#}
+    {#    <a href={{ path('insert_author') }}>#}
+    {#        <button>добавить автора</button>#}
+    {#    </a>#}
+
+
+{% endblock %}
